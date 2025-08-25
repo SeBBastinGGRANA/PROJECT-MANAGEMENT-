@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costos del Proyecto ERP - Sistema de Gestión</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="icon">💰</i> Gestión de Costos - Proyecto ERP</h1>
+            <p class="subtitle">Implementación Sistema ERP - Colombia 2025</p>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="container">
+            <button class="tab-btn active" onclick="openTab(event, 'planificacion')">📋 Planificación</button>
+            <button class="tab-btn" onclick="openTab(event, 'estimacion')">📊 Estimación</button>
+            <button class="tab-btn" onclick="openTab(event, 'presupuesto')">💵 Presupuesto</button>
+            <button class="tab-btn" onclick="openTab(event, 'control')">⚡ Control</button>
+            <button class="tab-btn" onclick="openTab(event, 'calculadora')">🧮 Calculadora</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- SECCIÓN 1: PLANIFICACIÓN -->
+        <section id="planificacion" class="tab-content active">
+            <div class="card">
+                <h2>4.1 Planificar la Gestión de los Costos</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Nivel de Exactitud</h3>
+                        <ul>
+                            <li>Fase inicial: <span class="highlight">±20%</span></li>
+                            <li>Planificación detallada: <span class="highlight">±10%</span></li>
+                            <li>Ejecución: <span class="highlight">±5%</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Cuentas de Control</h3>
+                        <ul>
+                            <li><strong>SW.01:</strong> Software y licencias</li>
+                            <li><strong>IM.02:</strong> Implementación</li>
+                            <li><strong>INF.03:</strong> Infraestructura</li>
+                            <li><strong>CAP.04:</strong> Capacitación</li>
+                            <li><strong>OP.05:</strong> Operación</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Umbrales de Control</h3>
+                        <ul>
+                            <li>Variación > 8%: <span class="warning">Análisis</span></li>
+                            <li>Variación > 12%: <span class="danger">Plan de acción</span></li>
+                            <li>Contingencia: <span class="success">10%</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ESTIMACIÓN -->
+        <section id="estimacion" class="tab-content">
+            <div class="card">
+                <h2>4.2 Estimar los Costos</h2>
+                
+                <div class="cost-breakdown">
+                    <h3>Estructura Detallada de Costos (CBS)</h3>
+                    
+                    <div class="cost-item" onclick="toggleDetails('software')">
+                        <div class="cost-header">
+                            <span class="cost-title">💻 Software ERP</span>
+                            <span class="cost-amount">$40,000,000 COP</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div id="software" class="cost-details">
+                            <div class="detail-item">
+                                <span>Módulo financiero</span>
+                                <span>$10,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Módulo de inventarios</span>
+                                <span>$8,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Módulo de ventas</span>
+                                <span>$7,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Módulo de RRHH</span>
+                                <span>$7,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Licencias de integración</span>
+                                <span>$8,000,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cost-item" onclick="toggleDetails('implementacion')">
+                        <div class="cost-header">
+                            <span class="cost-title">🔧 Implementación y Consultoría</span>
+                            <span class="cost-amount">$80,000,000 COP</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div id="implementacion" class="cost-details">
+                            <div class="detail-item">
+                                <span>Consultoría especializada</span>
+                                <span>$44,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Configuración y personalización</span>
+                                <span>$24,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Migración de datos</span>
+                                <span>$12,000,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cost-item" onclick="toggleDetails('infraestructura')">
+                        <div class="cost-header">
+                            <span class="cost-title">🖥️ Infraestructura Tecnológica</span>
+                            <span class="cost-amount">$20,000,000 COP</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div id="infraestructura" class="cost-details">
+                            <div class="detail-item">
+                                <span>Servidores y hardware (cloud)</span>
+                                <span>$12,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Software de base de datos</span>
+                                <span>$5,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Equipos de red y seguridad</span>
+                                <span>$3,000,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cost-item" onclick="toggleDetails('capacitacion')">
+                        <div class="cost-header">
+                            <span class="cost-title">👥 Capacitación y Gestión del Cambio</span>
+                            <span class="cost-amount">$40,000,000 COP</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div id="capacitacion" class="cost-details">
+                            <div class="detail-item">
+                                <span>Capacitación usuarios finales</span>
+                                <span>$26,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Formación de administradores</span>
+                                <span>$8,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Gestión del cambio organizacional</span>
+                                <span>$6,000,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cost-item" onclick="toggleDetails('soporte')">
+                        <div class="cost-header">
+                            <span class="cost-title">🔧 Soporte y Mantenimiento</span>
+                            <span class="cost-amount">$20,000,000 COP</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div id="soporte" class="cost-details">
+                            <div class="detail-item">
+                                <span>Soporte técnico especializado</span>
+                                <span>$12,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Actualizaciones y parches</span>
+                                <span>$5,000,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Monitoreo y optimización</span>
+                                <span>$3,000,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cost-total">
+                        <h3>Costo Total Directo: <span class="highlight">$200,000,000 COP</span></h3>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="costChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PRESUPUESTO -->
+        <section id="presupuesto" class="tab-content">
+            <div class="card">
+                <h2>4.3 Determinar el Presupuesto</h2>
+                
+                <div class="budget-summary">
+                    <div class="budget-item">
+                        <h3>Presupuesto Base</h3>
+                        <span class="amount">$200,000,000 COP</span>
+                    </div>
+                    <div class="budget-item">
+                        <h3>Reserva de Contingencia (10%)</h3>
+                        <span class="amount">$20,000,000 COP</span>
+                    </div>
+                    <div class="budget-item">
+                        <h3>Reserva de Gestión (5%)</h3>
+                        <span class="amount">$11,000,000 COP</span>
+                    </div>
+                    <div class="budget-item total">
+                        <h3>Presupuesto Total Autorizado</h3>
+                        <span class="amount">$231,000,000 COP</span>
+                    </div>
+                </div>
+
+                <h3>Distribución Temporal del Presupuesto (15 meses)</h3>
+                <div class="table-responsive">
+                    <table class="timeline-table">
+                        <thead>
+                            <tr>
+                                <th>Fase</th>
+                                <th>Duración</th>
+                                <th>Costo (COP)</th>
+                                <th>% del Total</th>
+                                <th>Acumulado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Planificación</td>
+                                <td>Meses 1-3</td>
+                                <td>$34,650,000</td>
+                                <td>15%</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 15%"></div>
+                                        <span>15%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Adquisiciones</td>
+                                <td>Meses 4-5</td>
+                                <td>$46,200,000</td>
+                                <td>20%</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 35%"></div>
+                                        <span>35%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Implementación Núcleo</td>
+                                <td>Meses 6-9</td>
+                                <td>$80,850,000</td>
+                                <td>35%</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%"></div>
+                                        <span>70%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pruebas y Capacitación</td>
+                                <td>Meses 10-13</td>
+                                <td>$46,200,000</td>
+                                <td>20%</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 90%"></div>
+                                        <span>90%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Despliegue y Cierre</td>
+                                <td>Meses 14-15</td>
+                                <td>$23,100,000</td>
+                                <td>10%</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 100%"></div>
+                                        <span>100%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: CONTROL -->
+        <section id="control" class="tab-content">
+            <div class="card">
+                <h2>4.4 Controlar los Costos</h2>
+                
+                <h3>Análisis del Valor Ganado (EVA) - Mes 7</h3>
+                <div class="eva-metrics">
+                    <div class="metric">
+                        <h4>PV (Valor Planificado)</h4>
+                        <span class="value">$108,570,000 COP</span>
+                        <small>47% del proyecto</small>
+                    </div>
+                    <div class="metric">
+                        <h4>EV (Valor Ganado)</h4>
+                        <span class="value">$110,000,000 COP</span>
+                        <small>48% completado</small>
+                    </div>
+                    <div class="metric">
+                        <h4>AC (Costo Real)</h4>
+                        <span class="value">$108,000,000 COP</span>
+                        <small>47% gastado</small>
+                    </div>
+                </div>
+
+                <div class="indicators">
+                    <div class="indicator positive">
+                        <h4>CV (Varianza de Costo)</h4>
+                        <span class="value">+$2,000,000 COP</span>
+                        <small>Bajo presupuesto ✅</small>
+                    </div>
+                    <div class="indicator positive">
+                        <h4>CPI (Índice de Desempeño)</h4>
+                        <span class="value">1.02</span>
+                        <small>Eficiencia positiva ✅</small>
+                    </div>
+                    <div class="indicator positive">
+                        <h4>SV (Varianza de Cronograma)</h4>
+                        <span class="value">+$1,000,000 COP</span>
+                        <small>Leve adelanto ✅</small>
+                    </div>
+                </div>
+
+                <div class="eac-section">
+                    <h3>Estimación a la Conclusión (EAC)</h3>
+                    <div class="eac-calculation">
+                        <p>EAC = BAC / CPI = $231,000,000 / 1.02 ≈ <strong>$226,470,588 COP</strong></p>
+                        <p class="eac-note">Proyección bajo presupuesto - Mantener controles actuales</p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="evaChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: CALCULADORA -->
+        <section id="calculadora" class="tab-content">
+            <div class="card">
+                <h2>🧮 Calculadora de Métricas EVM</h2>
+                
+                <div class="calculator">
+                    <div class="input-group">
+                        <label for="pv">Valor Planificado (PV) - COP:</label>
+                        <input type="number" id="pv" placeholder="108570000">
+                    </div>
+                    <div class="input-group">
+                        <label for="ev">Valor Ganado (EV) - COP:</label>
+                        <input type="number" id="ev" placeholder="110000000">
+                    </div>
+                    <div class="input-group">
+                        <label for="ac">Costo Real (AC) - COP:</label>
+                        <input type="number" id="ac" placeholder="108000000">
+                    </div>
+                    <div class="input-group">
+                        <label for="bac">Presupuesto a la Conclusión (BAC) - COP:</label>
+                        <input type="number" id="bac" placeholder="231000000">
+                    </div>
+                    
+                    <button onclick="calculateMetrics()" class="calc-btn">Calcular Métricas</button>
+                    
+                    <div id="results" class="results hidden">
+                        <h3>Resultados:</h3>
+                        <div class="result-grid">
+                            <div class="result-item">
+                                <span>CV (Varianza de Costo):</span>
+                                <span id="cv-result"></span>
+                            </div>
+                            <div class="result-item">
+                                <span>CPI (Índice de Desempeño de Costo):</span>
+                                <span id="cpi-result"></span>
+                            </div>
+                            <div class="result-item">
+                                <span>SV (Varianza de Cronograma):</span>
+                                <span id="sv-result"></span>
+                            </div>
+                            <div class="result-item">
+                                <span>SPI (Índice de Desempeño de Cronograma):</span>
+                                <span id="spi-result"></span>
+                            </div>
+                            <div class="result-item">
+                                <span>EAC (Estimación a la Conclusión):</span>
+                                <span id="eac-result"></span>
+                            </div>
+                            <div class="result-item">
+                                <span>ETC (Estimación para Completar):</span>
+                                <span id="etc-result"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sistema de Gestión de Costos ERP - Bogotá, Colombia</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
